@@ -70,29 +70,7 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
 </View>
 
 
-      {/* Premium Section
-      <Text style={styles.sectionTitle}>Premium</Text> */}
-
-      {/* <View style={styles.subscriptionCard}>
-        <Text style={styles.subscriptionTitle}>Mission NEETPG Premium</Text>
-        <Text style={styles.subscriptionValidity}>
-          Validity: 27 Mar 2025 - 25 Jun 2025
-        </Text>
-      </View> */}
-
-      {/* Other Options
-      {/* <TouchableOpacity style={styles.optionCard}>
-        <Icon name="pricetag-outline" size={20} color="#FF5722" />
-        <Text style={styles.optionText}>Explore More Plans</Text>
-      </TouchableOpacity> 
-
-      <TouchableOpacity style={styles.optionCard}>
-        <Icon name="book-outline" size={20} color="#FF5722" />
-        <Text style={styles.optionText}>Buy Notes</Text>
-      </TouchableOpacity> */}
-
-
-      <Text style={styles.sectionTitle}>Premium</Text>
+    <Text style={styles.sectionTitle}>Premium</Text>
 
 <ScrollView
   horizontal
@@ -144,19 +122,6 @@ export default function HomeScreen({ navigation }: { navigation: any }) {
     </TouchableOpacity>
   ))}
 </View>
-
-{/* <View style={styles.optionsSection}>
-  {options.map((item) => (
-    <TouchableOpacity key={item.id} style={styles.optionCard}>
-      <View style={styles.optionLeft}>
-        <Icon name={item.icon} size={22} color="#FF5722" />
-        <Text style={styles.optionText}>{item.title}</Text>
-      </View>
-      <Icon name="chevron-forward-outline" size={20} color="#555" />
-    </TouchableOpacity>
-  ))}
-</View> */}
-
 
     </ScrollView>
   );
