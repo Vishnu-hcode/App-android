@@ -86,6 +86,14 @@ export default function App() {
   );
 }
 
+export type RootStackParamList = {
+  MobileNumber: undefined;
+  Otp: { mobile: string };
+   LoginStack: undefined;  // contains Login & Otp screens
+   MainApp: undefined;   // contains Home and other screens
+};
+
+
 
 
  
