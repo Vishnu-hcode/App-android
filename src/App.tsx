@@ -23,6 +23,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import HomeStack from './navigation/HomeStack';
 import ProfileStack from './navigation/ProfileStack';
 import LoginStack from './navigation/LoginStack';
+import AnalyticsScreen from './screens/AnalyticsScreen';
 
 const Tab= createBottomTabNavigator();
 
@@ -33,14 +34,19 @@ function MainApp() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName =
-            route.name === 'Home'
-              ? focused ? 'home' : 'home-outline'
-              : route.name === 'Profile'
-                ? focused ? 'person' : 'person-outline'
-                : focused ? 'settings' : 'settings-outline';
+          let iconName: string;
 
-          return <Icon name={iconName} size={size} color={color} />;
+      if (route.name === 'Home') {
+        iconName = focused ? 'home' : 'home-outline';
+      } else if (route.name === 'Profile') {
+        iconName = focused ? 'person' : 'person-outline';
+      } else if (route.name === 'Analytics') {
+        iconName = focused ? 'create' : 'create-outline'; // ✏️ pen/paper icon
+      } else {
+        iconName = focused ? 'settings' : 'settings-outline';
+      }
+
+      return <Icon name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
@@ -55,6 +61,21 @@ function MainApp() {
         name="Profile"
         component={ProfileStack}
         options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Analytics"
+        component={AnalyticsScreen}
+        options={{ headerShown: false ,
+    //       headerStyle: {
+    //   backgroundColor: '#1a2f6b',
+    //   height: 120, // make header taller
+    // },
+    // headerTitleStyle: {
+    //   color: '#fff',
+    //   fontSize: 20,
+    //   fontWeight: 'bold',
+    // },
+        }}
       />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
